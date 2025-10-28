@@ -1,4 +1,5 @@
 import { MotionCurves } from "../../utils/curves.js";
+// Apex, Supine, Bell - Normal S1 S2 - Normal
 export const normalS1S2Rhythm = {
     name: "Normal S1 S2",
     animation: [

@@ -1,3 +1,4 @@
+// Apex, Supine, Bell - Mid-Systolic Click - Mitral Valve Prolapse (MVP)
 export const midSystolicClickRhythm = {
     name: "Mid-Systolic Click",
     sound: [

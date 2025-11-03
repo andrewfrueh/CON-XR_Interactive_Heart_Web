@@ -15,6 +15,7 @@ declare global {
         setHeartSoundVolume: (volume: number) => void;
         toggleHeartSoundVariations: () => void;
         getAvailableHeartRhythms: () => string[];
+        toggleMode: () => void;
     }
 }
 //# sourceMappingURL=heart.d.ts.map

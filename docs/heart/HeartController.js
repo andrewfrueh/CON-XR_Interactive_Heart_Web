@@ -25,10 +25,10 @@ export class HeartController {
         this.targetBlendshapes = new Map();
         // Heart chamber names mapping from rhythm names to actual blendshape names
         this.CHAMBER_NAMES = {
-            LA: 'LA 0.5',
-            RA: 'RA 0.5',
-            LV: 'LV 0.5',
-            RV: 'RV 0.5'
+            LA: 'LA',
+            RA: 'RA',
+            LV: 'LV',
+            RV: 'RV'
         };
         // Initialize default blendshape values
         Object.values(this.CHAMBER_NAMES).forEach(name => {

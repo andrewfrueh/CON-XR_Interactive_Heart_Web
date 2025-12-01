@@ -334,8 +334,7 @@ export class HeartController {
             const gainNode = this.audioContext.createGain();
             // Set volume
             gainNode.gain.value = (volume ?? 1) * this.soundVolume;
-            // Add subtle pitch variation for realism (±3%)
-            //const pitchVariation = 1 + (Math.random() - 0.5) * 0.06; // ±3%
+            // Set pitch
             source.playbackRate.value = pitch || 1;
             // Connect audio nodes
             source.buffer = buffer;

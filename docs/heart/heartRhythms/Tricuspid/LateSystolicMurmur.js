@@ -1,0 +1,26 @@
+// Apex, Supine, Bell - Late Systolic Murmur - Mitral Regurg due to MVP
+export const tricuspidLateSystolicMurmurRhythm = {
+    name: "Tricuspid Late Systolic Murmur",
+    location: "Tricuspid",
+    sound: [
+        // S1 sound
+        {
+            time: 0.32,
+            soundPath: "assets/sounds/heart-normal-S1.wav",
+            volume: .65
+        },
+        // Late Systolic Murmur sound
+        {
+            time: 0.53,
+            soundPath: "assets/sounds/late-Systolic-Murmur.wav",
+            volume: .65
+        },
+        // S2 sound
+        {
+            time: 0.62,
+            soundPath: "assets/sounds/heart-normal-S2.wav",
+            volume: .65
+        },
+    ]
+};
+//# sourceMappingURL=LateSystolicMurmur.js.map

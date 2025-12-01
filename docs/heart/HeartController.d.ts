@@ -28,6 +28,7 @@ export declare class HeartController {
     private morphTargetMeshes;
     private currentBlendshapes;
     private targetBlendshapes;
+    private rhythmSelect;
     private readonly CHAMBER_NAMES;
     private constructor();
     /**
@@ -142,6 +143,7 @@ export declare class HeartController {
      * Lerp function for more natural transitions
      */
     private lerp;
+    initializeRhythmSelect(selectId: string): void;
 }
 export {};
 //# sourceMappingURL=HeartController.d.ts.map

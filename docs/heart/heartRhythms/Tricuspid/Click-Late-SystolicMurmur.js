@@ -1,0 +1,29 @@
+// Apex, Left Ducubitus, Bell - Sys Click w/ Late Sys Murmur - MVP w/ Mitral Regurg
+export const tricuspidClickLateSystolicMurmurRhythm = {
+    name: "Tricuspid Click w/ Late Systolic Murmur",
+    location: "Tricuspid",
+    sound: [
+        // S1 sound
+        {
+            time: 0.32,
+            soundPath: "assets/sounds/heart-normal-S1.wav",
+        },
+        // Click sound
+        {
+            time: 0.50,
+            soundPath: "assets/sounds/click.wav",
+        },
+        // Late Systolic Murmur sound
+        {
+            time: 0.53,
+            soundPath: "assets/sounds/late-Systolic-Murmur.wav",
+            volume: .7
+        },
+        // S2 sound
+        {
+            time: 0.62,
+            soundPath: "assets/sounds/heart-normal-S2.wav",
+        },
+    ]
+};
+//# sourceMappingURL=Click-Late-SystolicMurmur.js.map

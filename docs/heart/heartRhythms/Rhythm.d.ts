@@ -9,11 +9,14 @@ export type AnimationKeyframe = {
 export type SoundKeyframe = {
     time: number;
     soundPath: string;
+    volume?: number;
+    pitch?: number;
 };
 export type Rhythm = {
     name: string;
     animation?: AnimationKeyframe[];
     sound?: SoundKeyframe[];
+    location: "Aortic" | "Pulmonic" | "Tricuspid" | "Mitral";
 };
 export declare const defaultRhythm: Rhythm;
 export declare const availableRhythms: Rhythm[];

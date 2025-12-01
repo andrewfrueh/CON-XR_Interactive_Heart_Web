@@ -23,6 +23,8 @@ export class HeartController {
         this.morphTargetMeshes = [];
         this.currentBlendshapes = new Map();
         this.targetBlendshapes = new Map();
+        //Rhythm Options
+        this.rhythmSelect = null;
         // Heart chamber names mapping from rhythm names to actual blendshape names
         this.CHAMBER_NAMES = {
             LA: 'LA',
@@ -295,7 +297,7 @@ export class HeartController {
      * Process a sound keyframe based on cycle progress
      */
     processSoundKeyframe(keyframe) {
-        const { time, soundPath } = keyframe;
+        const { time, soundPath, volume, pitch } = keyframe;
         const currentCycle = Math.floor((this.currentTime - this.startTime) / this.cycleDuration);
         // Gets the exact moment the sound should be played within the current cycle
         const beatTime = this.startTime + (currentCycle + time) * this.cycleDuration;
@@ -304,7 +306,7 @@ export class HeartController {
             const lastPlayed = this.lastPlayedSounds.get(soundPath) || -1;
             // Only play sound if it wasn't played during the current cycle (every keyframe sound only plays once during the cycle)
             if (lastPlayed < currentCycle) {
-                this.playSound(soundPath);
+                this.playSound(soundPath, volume, pitch);
                 this.lastPlayedSounds.set(soundPath, currentCycle);
             }
         }
@@ -312,7 +314,7 @@ export class HeartController {
     /**
      * Play a sound from the given path
      */
-    async playSound(soundPath) {
+    async playSound(soundPath, volume, pitch) {
         if (!this.audioContext) {
             console.warn('Audio context not available');
             return;
@@ -331,10 +333,10 @@ export class HeartController {
             const source = this.audioContext.createBufferSource();
             const gainNode = this.audioContext.createGain();
             // Set volume
-            gainNode.gain.value = this.soundVolume;
+            gainNode.gain.value = (volume ?? 1) * this.soundVolume;
             // Add subtle pitch variation for realism (±3%)
             //const pitchVariation = 1 + (Math.random() - 0.5) * 0.06; // ±3%
-            //source.playbackRate.value = pitchVariation;
+            source.playbackRate.value = pitch || 1;
             // Connect audio nodes
             source.buffer = buffer;
             source.connect(gainNode);
@@ -350,6 +352,14 @@ export class HeartController {
      */
     lerp(a, b, t) {
         return a + (b - a) * t;
+    }
+    initializeRhythmSelect(selectId) {
+        const select = document.getElementById(selectId);
+        if (!select) {
+            console.warn("Rhythm select element not found:", selectId);
+            return;
+        }
+        this.rhythmSelect = select;
     }
 }
 //# sourceMappingURL=HeartController.js.map

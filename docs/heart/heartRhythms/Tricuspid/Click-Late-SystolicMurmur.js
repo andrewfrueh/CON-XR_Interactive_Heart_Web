@@ -1,6 +1,6 @@
 // Apex, Left Ducubitus, Bell - Sys Click w/ Late Sys Murmur - MVP w/ Mitral Regurg
 export const tricuspidClickLateSystolicMurmurRhythm = {
-    name: "Tricuspid Click w/ Late Systolic Murmur",
+    name: "Click w/ Late Systolic Murmur",
     location: "Tricuspid",
     sound: [
         // S1 sound

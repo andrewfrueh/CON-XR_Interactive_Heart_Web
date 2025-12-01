@@ -1,6 +1,6 @@
 // Aortic, Supine, Bell - Early Systolic Murmur - Acute Mitral Regurg
 export const aorticEarlySystolicMurmurRhythm = {
-    name: "Aortic Early Systolic Murmur",
+    name: "Early Systolic Murmur",
     location: "Aortic",
     sound: [
         // S1 sound from aortic location

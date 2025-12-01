@@ -1,6 +1,6 @@
 // Aortic, Supine, Bell - Late Systolic Murmur - Mitral Regurg due to MVP
 export const aorticLateSystolicMurmurRhythm = {
-    name: "Aortic Late Systolic Murmur",
+    name: "Late Systolic Murmur",
     location: "Aortic",
     sound: [
         // S1 sound from aortic location

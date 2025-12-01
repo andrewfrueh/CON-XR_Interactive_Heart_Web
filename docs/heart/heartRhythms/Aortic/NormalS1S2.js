@@ -1,7 +1,7 @@
 import { MotionCurves } from "../../../utils/curves.js";
 // Aortic, Supine, Bell - Normal S1 S2 - Normal
 export const aorticNormalS1S2Rhythm = {
-    name: "Aortic Normal S1 S2",
+    name: "Normal S1 S2",
     location: "Aortic",
     animation: [
         // Atria contract

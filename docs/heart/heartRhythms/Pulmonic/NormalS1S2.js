@@ -1,5 +1,5 @@
 export const pulmonicNormalS1S2Rhythm = {
-    name: "Pulmonic Normal S1 S2",
+    name: "Normal S1 S2",
     location: "Pulmonic",
     sound: [
         {

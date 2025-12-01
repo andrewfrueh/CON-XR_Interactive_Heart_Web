@@ -1,6 +1,6 @@
 // Apex, Left Ducubitus, Bell - S3 & Holosys Murmur - Dilated Cardiomyopathy w/ Mitral Regurg
 export const mitralS3HolosysMurmurRhythm = {
-    name: "Apex S3 & Holosys Murmur",
+    name: "S3 & Holosys Murmur",
     location: "Mitral",
     sound: [
         // S1 sound

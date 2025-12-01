@@ -1,6 +1,6 @@
 // Apex, Supine, Bell - Late Systolic Murmur - Mitral Regurg due to MVP
 export const tricuspidLateSystolicMurmurRhythm = {
-    name: "Tricuspid Late Systolic Murmur",
+    name: "Late Systolic Murmur",
     location: "Tricuspid",
     sound: [
         // S1 sound

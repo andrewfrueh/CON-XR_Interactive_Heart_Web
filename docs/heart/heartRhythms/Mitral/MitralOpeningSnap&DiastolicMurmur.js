@@ -1,6 +1,6 @@
 // Apex, Left Ducubitus, Bell - Mitral Opening Snap & Diastolic Murmur - Mitral Stenosis
 export const mitralOpeningSnapAndDiastolicMurmurRhythm = {
-    name: "Apex Mitral Opening Snap & Diastolic Murmur",
+    name: "Mitral Opening Snap & Diastolic Murmur",
     location: "Mitral",
     sound: [
         // S1 sound

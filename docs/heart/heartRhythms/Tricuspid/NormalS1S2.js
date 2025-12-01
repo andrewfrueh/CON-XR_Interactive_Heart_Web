@@ -1,6 +1,6 @@
 // Apex, Supine, Bell - Normal S1 S2 - Normal
 export const tricuspidNormalS1S2Rhythm = {
-    name: "Tricuspid Normal S1 S2",
+    name: "Normal S1 S2",
     location: "Tricuspid",
     sound: [
         // S1 sound

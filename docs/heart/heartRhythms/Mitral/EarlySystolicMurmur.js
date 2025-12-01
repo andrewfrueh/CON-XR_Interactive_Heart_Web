@@ -1,6 +1,6 @@
 // Apex, Supine, Bell - Early Systolic Murmur - Acute Mitral Regurg
 export const mitralEarlySystolicMurmurRhythm = {
-    name: "Apex Early Systolic Murmur",
+    name: "Early Systolic Murmur",
     location: "Mitral",
     sound: [
         // S1 sound

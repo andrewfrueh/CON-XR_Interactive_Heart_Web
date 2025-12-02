@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { CurveFunction } from '../utils/curves.js';
-import { Rhythm } from './heartRhythms/Rhythm.js';
+import { Rhythm, AuscultationRhythms, SelectableRhythm, AuscultationLocation } from './heartRhythms/Rhythm.js';
 interface BlendshapeCategory {
     categoryName: string;
     score: number;
@@ -29,6 +29,8 @@ export declare class HeartController {
     private currentBlendshapes;
     private targetBlendshapes;
     private rhythmSelect;
+    private rythmSelectableName;
+    private auscultationLocation;
     private readonly CHAMBER_NAMES;
     private constructor();
     /**
@@ -74,7 +76,7 @@ export declare class HeartController {
     /**
      * Set the heart rhythm pattern
      */
-    setRhythm(rhythm: Rhythm): void;
+    private setRhythm;
     /**
      * Get the current rhythm
      */
@@ -82,15 +84,11 @@ export declare class HeartController {
     /**
      * Switch to a different rhythm pattern
      */
-    switchToRhythm(rhythm: Rhythm): void;
+    switchToRhythm(rhythm: SelectableRhythm): void;
     /**
      * Get all available rhythm patterns
      */
-    getAvailableRhythms(): Rhythm[];
-    /**
-     * Switch to rhythm by name
-     */
-    switchToRhythmByName(name: string): boolean;
+    getAvailableRhythms(): AuscultationRhythms;
     /**
      * Get current rhythm name
      */
@@ -103,6 +101,10 @@ export declare class HeartController {
      * Get current sound volume
      */
     getSoundVolume(): number;
+    /**
+     * Set the auscultation location
+     */
+    setAuscultationLocation(location: AuscultationLocation): void;
     /**
      * Get the current motion curve type
      */

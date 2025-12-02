@@ -1,2 +1,3 @@
-export declare const tricuspidRhythms: import("../Rhythm.js").Rhythm[];
+import { AuscultationRhythms } from "../Rhythm.js";
+export declare const tricuspidRhythms: AuscultationRhythms;
 //# sourceMappingURL=index.d.ts.map

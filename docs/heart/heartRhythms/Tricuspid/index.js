@@ -6,14 +6,14 @@ import { tricuspidMidSystolicMurmurRhythm } from "./Mid-SystolicMurmur.js";
 import { tricuspidNormalS1S2Rhythm } from "./NormalS1S2.js";
 import { tricuspidS3GallopRhythm } from "./S3Gallop.js";
 import { tricuspidS4GallopRhythm } from "./S4Gallop.js";
-export const tricuspidRhythms = [
-    tricuspidNormalS1S2Rhythm,
-    tricuspidS3GallopRhythm,
-    tricuspidS4GallopRhythm,
-    tricuspidMidSystolicClickRhythm,
-    tricuspidEarlySystolicMurmurRhythm,
-    tricuspidMidSystolicMurmurRhythm,
-    tricuspidLateSystolicMurmurRhythm,
-    tricuspidClickLateSystolicMurmurRhythm,
-];
+export const tricuspidRhythms = {
+    NormalS1S2: tricuspidNormalS1S2Rhythm,
+    S3Gallop: tricuspidS3GallopRhythm,
+    S4Gallop: tricuspidS4GallopRhythm,
+    MidSystolicClick: tricuspidMidSystolicClickRhythm,
+    EarlySystolicMurmur: tricuspidEarlySystolicMurmurRhythm,
+    MidSystolicMurmur: tricuspidMidSystolicMurmurRhythm,
+    LateSystolicMurmur: tricuspidLateSystolicMurmurRhythm,
+    ClickLateSystolicMurmur: tricuspidClickLateSystolicMurmurRhythm,
+};
 //# sourceMappingURL=index.js.map

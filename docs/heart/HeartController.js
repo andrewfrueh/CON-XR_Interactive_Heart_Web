@@ -25,6 +25,8 @@ export class HeartController {
         this.targetBlendshapes = new Map();
         //Rhythm Options
         this.rhythmSelect = null;
+        this.rythmSelectableName = "NormalS1S2";
+        this.auscultationLocation = "Aortic";
         // Heart chamber names mapping from rhythm names to actual blendshape names
         this.CHAMBER_NAMES = {
             LA: 'LA',
@@ -131,25 +133,15 @@ export class HeartController {
      * Switch to a different rhythm pattern
      */
     switchToRhythm(rhythm) {
-        this.setRhythm(rhythm);
+        const rhythmObject = availableRhythms[this.auscultationLocation][rhythm];
+        this.rythmSelectableName = rhythm;
+        this.setRhythm(rhythmObject);
     }
     /**
      * Get all available rhythm patterns
      */
     getAvailableRhythms() {
-        return availableRhythms;
-    }
-    /**
-     * Switch to rhythm by name
-     */
-    switchToRhythmByName(name) {
-        const rhythm = availableRhythms.find(r => r.name === name);
-        if (rhythm) {
-            this.switchToRhythm(rhythm);
-            return true;
-        }
-        console.warn(`Rhythm "${name}" not found`);
-        return false;
+        return availableRhythms[this.rhythm.location];
     }
     /**
      * Get current rhythm name
@@ -168,6 +160,13 @@ export class HeartController {
      */
     getSoundVolume() {
         return this.soundVolume;
+    }
+    /**
+     * Set the auscultation location
+     */
+    setAuscultationLocation(location) {
+        this.auscultationLocation = location;
+        this.setRhythm(availableRhythms[location][this.rythmSelectableName]);
     }
     /**
      * Get the current motion curve type

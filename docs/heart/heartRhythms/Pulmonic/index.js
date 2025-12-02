@@ -6,17 +6,14 @@ import { pulmonicMidSystolicMurmurRhythm } from "./Mid-SystolicMurmur.js";
 import { pulmonicNormalS1S2Rhythm } from "./NormalS1S2.js";
 import { pulmonicS3Gallop } from "./S3Gallop.js";
 import { pulmonicS4Gallop } from "./S4Gallop.js";
-export const pulmonicRhythms = [
-    pulmonicNormalS1S2Rhythm,
-    pulmonicS3Gallop,
-    pulmonicS4Gallop,
-    pulmonicMidSystolicClickRhythm,
-    pulmonicEarlySystolicMurmurRhythm,
-    pulmonicMidSystolicMurmurRhythm,
-    pulmonicLateSystolicMurmurRhythm,
-    pulmonicClickLateSystolicMurmurRhythm,
-    // pulmonicSystolicDiastolicMurmurRhythm,
-    // pulmonicSystolicMurmurAbsentS2Rhythm,
-    // pulmonicEarlyDiastolicMurmurRhythm,
-];
+export const pulmonicRhythms = {
+    NormalS1S2: pulmonicNormalS1S2Rhythm,
+    S3Gallop: pulmonicS3Gallop,
+    S4Gallop: pulmonicS4Gallop,
+    MidSystolicClick: pulmonicMidSystolicClickRhythm,
+    EarlySystolicMurmur: pulmonicEarlySystolicMurmurRhythm,
+    MidSystolicMurmur: pulmonicMidSystolicMurmurRhythm,
+    LateSystolicMurmur: pulmonicLateSystolicMurmurRhythm,
+    ClickLateSystolicMurmur: pulmonicClickLateSystolicMurmurRhythm,
+};
 //# sourceMappingURL=index.js.map

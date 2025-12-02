@@ -12,12 +12,18 @@ export type SoundKeyframe = {
     volume?: number;
     pitch?: number;
 };
+export type AuscultationLocation = "Aortic" | "Pulmonic" | "Tricuspid" | "Mitral";
 export type Rhythm = {
     name: string;
     animation?: AnimationKeyframe[];
     sound?: SoundKeyframe[];
-    location: "Aortic" | "Pulmonic" | "Tricuspid" | "Mitral";
+    location: AuscultationLocation;
 };
 export declare const defaultRhythm: Rhythm;
-export declare const availableRhythms: Rhythm[];
+export type SelectableRhythm = "ClickLateSystolicMurmur" | "EarlySystolicMurmur" | "LateSystolicMurmur" | "MidSystolicClick" | "MidSystolicMurmur" | "NormalS1S2" | "S3Gallop" | "S4Gallop";
+export declare const SelectableRhythmName: Record<SelectableRhythm, string>;
+export type AuscultationRhythms = {
+    [key in SelectableRhythm]: Rhythm;
+};
+export declare const availableRhythms: Record<AuscultationLocation, AuscultationRhythms>;
 //# sourceMappingURL=Rhythm.d.ts.map

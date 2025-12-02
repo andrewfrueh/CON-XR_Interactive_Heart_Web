@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import { HeartController } from './HeartController.js';
-import { rhythmGroups } from './RhythmOptions.js';
 // Global variables 
 let scene;
 let camera;
@@ -83,7 +82,7 @@ export function init() {
     loadHeartModel();
     // Start animation loop
     animate();
-    selectAuscultationPoint('aortic');
+    selectAuscultationPoint('Aortic');
     // Handle window resize
     window.addEventListener('resize', onWindowResize);
 }
@@ -308,22 +307,16 @@ function setHeartBPM(bpm) {
     heartController.setBPM(bpm);
 }
 // Current selected auscultation point
-let currentAuscultationPoint = 'aortic';
+let currentAuscultationPoint = 'Aortic';
 // Callback function for auscultation point selection
 let auscultationCallback = null;
 // Heart rhythm control functions
-function switchHeartRhythm(rhythmName) {
-    const success = heartController.switchToRhythmByName(rhythmName);
-    if (success) {
-        // console.log(`Switched to heart rhythm: ${rhythmName}`);
-    }
+function switchHeartRhythm(rhythm) {
+    heartController.switchToRhythm(rhythm);
 }
 function setHeartSoundVolume(volume) {
     heartController.setSoundVolume(volume);
     // console.log(`Heart sound volume set to: ${(volume * 100).toFixed(0)}%`);
-}
-function getAvailableHeartRhythms() {
-    return heartController.getAvailableRhythms().map(rhythm => rhythm.name);
 }
 function toggleMode() {
     const modeButton = document.getElementById("change-mode");
@@ -350,14 +343,12 @@ function toggleAuscultationPanel() {
     }
 }
 function selectAuscultationPoint(point) {
-    updateRhythmOptions(point);
-    const validPoints = ['aortic', 'pulmonic', 'tricuspid', 'mitral'];
+    const validPoints = ['Aortic', 'Pulmonic', 'Tricuspid', 'Mitral'];
     if (!validPoints.includes(point)) {
         console.error(`Invalid auscultation point: ${point}`);
         return;
     }
-    const auscultationPoint = point;
-    currentAuscultationPoint = auscultationPoint;
+    currentAuscultationPoint = point;
     // Update UI to show selected point
     const currentPointElement = document.getElementById('currentPoint');
     if (currentPointElement) {
@@ -374,36 +365,17 @@ function selectAuscultationPoint(point) {
     const allPoints = document.querySelectorAll('.auscultation-point');
     allPoints.forEach(p => p.classList.remove('active'));
     // Add active class to selected point
-    const selectedPoint = document.querySelector(`.auscultation-point.${point}`);
+    const selectedPoint = document.querySelector(`.auscultation-point.${point.toLowerCase()}`);
     if (selectedPoint) {
         selectedPoint.classList.add('active');
     }
-    const normalRhythmValue = `${point.charAt(0).toUpperCase() + point.slice(1)} Normal S1 S2`;
     // Automatically switch to appropriate rhythm based on auscultation point
-    switchRhythmForAuscultationPoint(auscultationPoint);
-    heartController.switchToRhythmByName(normalRhythmValue);
+    heartController.setAuscultationLocation(point);
     // Call the callback if one is registered
     if (auscultationCallback) {
-        auscultationCallback(auscultationPoint);
+        auscultationCallback(point);
     }
     // console.log(`Selected auscultation point: ${auscultationPoint}`);
-}
-function switchRhythmForAuscultationPoint(point) {
-    // Map auscultation points to default rhythms
-    const rhythmMap = {
-        'aortic': 'Aortic Normal S1 S2',
-        'pulmonic': 'Pulmonic Normal S1 S2',
-        'tricuspid': 'Tricuspid Normal S1 S2',
-        'mitral': 'Apex Normal S1 S2'
-    };
-    const rhythmName = rhythmMap[point];
-    // Update the rhythm select dropdown
-    const rhythmSelect = document.getElementById('rhythmSelect');
-    if (rhythmSelect) {
-        rhythmSelect.value = rhythmName;
-    }
-    // Switch to the rhythm
-    heartController.switchToRhythmByName(rhythmName);
 }
 function setAuscultationCallback(callback) {
     auscultationCallback = callback;
@@ -411,31 +383,17 @@ function setAuscultationCallback(callback) {
 function getCurrentAuscultationPoint() {
     return currentAuscultationPoint;
 }
-function updateRhythmOptions(point) {
-    // Clear current options
-    rhythmSelect.innerHTML = '';
-    // Get rhythms for selected point
-    const options = rhythmGroups[point] || [];
-    // Add new options
-    options.forEach(opt => {
-        const optionEl = document.createElement('option');
-        optionEl.value = opt.value;
-        optionEl.textContent = opt.label;
-        rhythmSelect.appendChild(optionEl);
-    });
-}
 window.resetCamera = resetCamera;
 window.toggleAnimation = toggleAnimation;
 window.setHeartCycleDuration = setHeartCycleDuration;
 window.setHeartBPM = setHeartBPM;
 window.updateBlendshapes = (blendshapes) => heartController.applyExternalBlendshapes(blendshapes);
 window.heartController = heartController;
-window.switchHeartRhythm = switchHeartRhythm;
+window.selectAuscultationPoint = selectAuscultationPoint;
 window.setHeartSoundVolume = setHeartSoundVolume;
-window.getAvailableHeartRhythms = getAvailableHeartRhythms;
 window.toggleMode = toggleMode;
 window.toggleAuscultationPanel = toggleAuscultationPanel;
-window.selectAuscultationPoint = selectAuscultationPoint;
 window.setAuscultationCallback = setAuscultationCallback;
 window.getCurrentAuscultationPoint = getCurrentAuscultationPoint;
+window.switchHeartRhythm = switchHeartRhythm;
 //# sourceMappingURL=heart.js.map

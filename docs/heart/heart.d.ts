@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { HeartController } from './HeartController.js';
+import { AuscultationLocation, SelectableRhythm } from './heartRhythms/Rhythm.js';
 export declare function init(): void;
-type AuscultationPoint = 'aortic' | 'pulmonic' | 'tricuspid' | 'mitral';
 declare global {
     interface Window {
         resetCamera: () => void;
@@ -12,16 +12,15 @@ declare global {
         heartController: HeartController;
         morphTargetMeshes: THREE.Mesh[];
         heartMorphTargets: any;
-        switchHeartRhythm: (rhythmName: string) => void;
+        switchHeartRhythm: (rhythm: SelectableRhythm) => void;
         setHeartSoundVolume: (volume: number) => void;
         toggleHeartSoundVariations: () => void;
         getAvailableHeartRhythms: () => string[];
         toggleMode: () => void;
         toggleAuscultationPanel: () => void;
-        selectAuscultationPoint: (point: string) => void;
-        setAuscultationCallback: (callback: (point: AuscultationPoint) => void) => void;
-        getCurrentAuscultationPoint: () => AuscultationPoint | null;
+        selectAuscultationPoint: (point: AuscultationLocation) => void;
+        setAuscultationCallback: (callback: (point: AuscultationLocation) => void) => void;
+        getCurrentAuscultationPoint: () => AuscultationLocation | null;
     }
 }
-export {};
 //# sourceMappingURL=heart.d.ts.map

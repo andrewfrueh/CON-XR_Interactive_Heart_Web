@@ -5,5 +5,4 @@ export interface RhythmOption {
 export interface RhythmGroups {
     [location: string]: RhythmOption[];
 }
-export declare const rhythmGroups: RhythmGroups;
 //# sourceMappingURL=RhythmOptions.d.ts.map

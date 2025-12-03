@@ -1,6 +1,5 @@
 // Aortic, Sitting, Bell - Systolic & Diastolic Murmur - Combined Aortic Stenosis and Regurg
 export const aorticSystolicDiastolicMurmurRhythm = {
-    name: "Systolic & Diastolic Murmur",
     location: "Aortic",
     sound: [
         // S1 sound

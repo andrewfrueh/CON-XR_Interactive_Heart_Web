@@ -1,5 +1,4 @@
 export const pulmonicLateSystolicMurmurRhythm = {
-    name: "Late Systolic Murmur",
     location: "Pulmonic",
     sound: [
         {

@@ -147,7 +147,7 @@ export class HeartController {
      * Get current rhythm name
      */
     getCurrentRhythmName() {
-        return this.rhythm.name;
+        return this.rythmSelectableName;
     }
     /**
      * Set sound volume (0.0 to 1.0)

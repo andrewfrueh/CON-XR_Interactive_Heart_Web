@@ -128,7 +128,7 @@ function loadHeartModel() {
         const scale = 5 / maxDim;
         heart.scale.setScalar(scale);
         // Center the heart
-        heart.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
+        heart.position.set(-center.x * scale, -center.y * scale + 0.2, -center.z * scale);
         // Start heart controller animation
         heartController.start();
         // Enable shadows and apply materials for all meshes in the model
@@ -332,7 +332,7 @@ function toggleMode() {
         scene.background = new THREE.Color(0xffffff); // light background
         document.body.classList.add('light-mode');
         if (iconSpan)
-            iconSpan.textContent = '🌞'; // sun icon for light mode
+            iconSpan.textContent = '🔆'; // sun icon for light mode
     }
 }
 // Auscultation point management functions

@@ -1,6 +1,5 @@
 // Apex, Left Ducubitus, Bell - S4 & Mid-Sys Murmur - Ischemic Cardiomyopathy w/ Mitral Regurg
 export const mitralS4MidSysRhythm = {
-    name: "S4 & Mid-Sys Murmur",
     location: "Mitral",
     sound: [
         // S4 sound

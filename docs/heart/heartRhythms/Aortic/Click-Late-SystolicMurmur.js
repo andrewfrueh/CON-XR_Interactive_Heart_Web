@@ -1,6 +1,5 @@
 // Aortic, Left Ducubitus, Bell - Sys Click w/ Late Sys Murmur - MVP w/ Mitral Regurg
 export const aorticClickLateSystolicMurmurRhythm = {
-    name: "Click w/ Late Systolic Murmur",
     location: "Aortic",
     sound: [
         // S1 sound from aortic location

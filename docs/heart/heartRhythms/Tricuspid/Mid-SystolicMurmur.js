@@ -1,6 +1,5 @@
 // Aortic, Supine, Bell - Mid-Systolic Murmur - Mitral Regurg due to CAD
 export const tricuspidMidSystolicMurmurRhythm = {
-    name: "Mid-Systolic Murmur",
     location: "Tricuspid",
     sound: [
         // S1 sound from aortic location

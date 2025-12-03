@@ -1,6 +1,5 @@
 // Aortic, Left Ducubitus, Bell - S4 Gallop - Left Ventricular Hypertrophy
 export const aorticS4GallopRhythm = {
-    name: "S4 Gallop",
     location: "Aortic",
     sound: [
         // S4 sound. Volume is low because from our research this sound can barely be heard from this location

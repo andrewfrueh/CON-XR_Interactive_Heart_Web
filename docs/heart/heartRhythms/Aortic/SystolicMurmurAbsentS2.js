@@ -1,6 +1,5 @@
 // Aortic, Sitting, Bell - Systolic Murmur w/ Absent S2 - Severe Aortic Stenosis
 export const aorticSystolicMurmurAbsentS2Rhythm = {
-    name: "Systolic Murmur w/ Absent S2",
     location: "Aortic",
     sound: [
         // S1 sound

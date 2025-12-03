@@ -1,6 +1,5 @@
 // Apex, Left Ducubitus, Bell - S3 Gallop - Both Normal and Cardiomyopathy
 export const tricuspidS3GallopRhythm = {
-    name: "S3 Gallop",
     location: "Tricuspid",
     sound: [
         // S1 sound

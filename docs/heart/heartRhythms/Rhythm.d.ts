@@ -14,7 +14,6 @@ export type SoundKeyframe = {
 };
 export type AuscultationLocation = "Aortic" | "Pulmonic" | "Tricuspid" | "Mitral";
 export type Rhythm = {
-    name: string;
     animation?: AnimationKeyframe[];
     sound?: SoundKeyframe[];
     location: AuscultationLocation;

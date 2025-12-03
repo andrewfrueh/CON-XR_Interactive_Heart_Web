@@ -1,5 +1,4 @@
 export const pulmonicS3Gallop = {
-    name: "S3 Gallop",
     location: "Pulmonic",
     sound: [
         {

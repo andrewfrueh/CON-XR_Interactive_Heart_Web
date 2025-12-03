@@ -1,5 +1,4 @@
 export const pulmonicMidSystolicClickRhythm = {
-    name: "Mid-Systolic Click",
     location: "Pulmonic",
     sound: [
         {
